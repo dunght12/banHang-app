@@ -1,0 +1,58 @@
+{"data":[
+    {
+        "xuat":"",
+        "maSanPham":"A01",
+        "tenSanPham": "Samsung Galaxy A01",
+        "IMEI":1122233334444556,
+        "status" : "Mới",
+        "hanBaoHanh": 2025,
+        "donGia" : 3020000,
+        "VAT": 30200,
+        "soLuong": 1,
+        "ghiChuHD": "không",
+        "nhaSanXuat": "Samsung",
+        "nhomHang": "Điện thoại"
+    },
+    {
+        "xuat":"",
+        "maSanPham":"A02",
+        "tenSanPham": "Samsung Galaxy S20",
+        "IMEI":4605233334444556,
+        "status" : "Mới",
+        "hanBaoHanh": 2025,
+        "donGia" : 2500000,
+        "VAT": 250000,
+        "soLuong": 1,
+        "ghiChuHD": "không",
+        "nhaSanXuat": "Samsung",
+        "nhomHang": "Điện thoại"
+    },
+    {
+        "xuat":"",
+        "maSanPham":"A03",
+        "tenSanPham": "Samsung Galaxy S21",
+        "IMEI":7888233334444556,
+        "status" : "Mới",
+        "hanBaoHanh": 2025,
+        "donGia" : 30020000,
+        "VAT": 302000,
+        "soLuong": 1,
+        "ghiChuHD": "không",
+        "nhaSanXuat": "Samsung",
+        "nhomHang": "Điện thoại"
+    },
+    {
+        "xuat":"",
+        "maSanPham":"A04",
+        "tenSanPham": "Samsung Galaxy A51",
+        "IMEI":7888290004444556,
+        "status" : "Mới",
+        "hanBaoHanh": 2025,
+        "donGia" : 6700000,
+        "VAT": 67000,
+        "soLuong": 2,
+        "ghiChuHD": "không",
+        "nhaSanXuat": "Samsung",
+        "nhomHang": "Điện thoại"
+    }
+]}

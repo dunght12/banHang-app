@@ -1,0 +1,18 @@
+{"data":[
+    {
+        "id" : 1,
+        "maKh" : "A001",
+        "tenKh" : "Ha Thanh Dung",
+        "diaChi" : "Mai Dịch, Cầu Giấy, Hà Nội",
+        "maSoThu" : 8360963272,
+        "dienThoai" : 912345678
+    },
+    {
+        "id" : 2,
+        "maKh" : "A012",
+        "tenKh" : "Nguyen Thi Lan",
+        "diaChi" : "Trung Liệt, Đống Đa, Hà Nội",
+        "maSoThu" : 8110763512,
+        "dienThoai" : 911112270
+    },
+]}
