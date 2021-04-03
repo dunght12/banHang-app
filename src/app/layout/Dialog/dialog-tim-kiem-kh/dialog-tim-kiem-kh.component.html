@@ -1,0 +1,77 @@
+<!-- dialog tìm kiếm khách hàng -->
+<p-dialog header="Tìm kiếm khách hàng" [(visible)]="displayDialogTimKiemKh" [style]="{width:'65vw'}" [baseZIndex]="10000">
+    <div class="p-fluid p-formgrid p-grid" style="font-size: .9em;">
+      <div class="p-field p-col-12 p-md-6">
+        <label for="">Từ khóa</label>
+        <input type="text" pInputText>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="">Loại khách hàng</label>
+        <input type="text" pInputText>
+      </div>
+      <div class="p-field p-md-9">
+        <div class="p-grid p-mt-1">
+        <div class="p-field p-md-2">
+          <span>
+            <p-checkbox></p-checkbox>
+            <label for="maKH" class="p-pl-1">Mã KH</label>
+          </span>
+        </div>
+        <div class="p-field p-md-2">
+          <span>
+            <p-checkbox></p-checkbox>
+            <label for="tenKH" class="p-pl-1">Tên KH</label>
+          </span>
+        </div>
+        <div class="p-field p-md-2">
+          <span>
+            <p-checkbox></p-checkbox>
+            <label for="diaChi" class="p-pl-1">Địa chỉ</label>
+          </span>
+        </div>
+        <div class="p-field p-md-2">
+          <span>
+            <p-checkbox></p-checkbox>
+            <label for="soDT" class="p-pl-1">Số ĐT</label>
+          </span>
+        </div>
+        <div class="p-field p-md-2">
+          <span>
+            <p-checkbox></p-checkbox>
+            <label for="email" class="p-pl-1">Email</label>
+          </span>
+        </div>
+        <div class="p-field p-md-2 p-pr-0">
+          <span>
+            <p-checkbox></p-checkbox>
+            <label for="maSoThue" class="p-pl-1">Mã số thuế</label>
+          </span>
+        </div>
+      </div>
+    </div>
+      <div class="p-field p-md-1"></div>
+      <div class="p-field p-md-2">
+        <button pButton type="button" icon="pi pi-search" iconPos="left" label="Tìm kiếm"></button>
+      </div>
+    </div>
+    <p-table>
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Mã KH</th>
+              <th>Tên KH</th>
+              <th>Địa chỉ</th>
+              <th>Mã số thuế</th>
+              <th>Điện thoại</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-employee>
+          <tr>
+              <td>{{employee.maKH}}</td>
+              <td>{{employee.tenKH}</td>
+              <td>{{employee.diaChi}}</td>
+              <td>{{employee.maSoThue}}</td>
+              <td>{{employee.dienThoai}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </p-dialog>

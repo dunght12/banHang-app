@@ -1,0 +1,90 @@
+<section id="bangFooter">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-col-2"></div>
+      <div class="p-col-5">
+        <div class="p-grid">
+          <div class="p-col-3"></div>
+          <div class="p-field p-col-9">
+            <!-- <p-inputNumber mode="currency" currency="USD" locale="en-US" placeholder="Tiền mặt"></p-inputNumber>-->
+            <p-dropdown [options]="hinhThucTT" optionLabel="name"></p-dropdown>
+          </div>
+          <div class="p-col-3"></div>
+          <div class="p-field p-col-3 p-mt-2">
+            <label for="">Tổng số lượng</label>
+          </div>
+          <div class="p-field p-col-6">
+            <p-inputNumber mode="decimal" placeholder="0"></p-inputNumber>
+          </div>
+          <div class="p-col-3"></div>
+          <div class="p-field p-col-3 p-mt-2">
+            <label for="">Thành tiền</label>
+          </div>
+          <div class="p-field p-col-6">
+            <p-inputNumber mode="decimal" placeholder="0"></p-inputNumber>
+          </div>
+          <div class="p-field p-col-3">
+            <button pButton type="button" label="Giảm giá" style="width:80%;font-weight: bold;" (click)="showDialogGiamGia()"></button>
+            <app-dialog-giam-gia [displayDialogGiamGia]="show7"></app-dialog-giam-gia>
+          </div>
+          <div class="p-field p-col-3">
+            <!-- <label for="">Chọn lý do giảm</label> -->
+            <p-dropdown [options]="lyDoGiamGia" optionLabel="name"></p-dropdown>
+          </div>
+          <div class="p-field p-col-6">
+            <p-inputNumber mode="decimal" placeholder="0"></p-inputNumber>
+          </div>
+          <div class="p-col-3"></div>
+          <div class="p-field p-col-3">
+            <label for="" style="color: red;" class="p-mt-2">Phải thanh toán</label>
+          </div>
+          <div class="p-field p-col-6">
+            <p-inputNumber mode="decimal" placeholder="0"></p-inputNumber>
+          </div>
+        </div>
+      </div>
+      <div class="p-col-1"></div>
+      <div class="p-col-3">
+        <div class="p-grid">
+          <div class="p-field p-col-5 p-mt-2">
+            <label for=""><a (click)="showDialogTien()"><u> Tiền thanh toán</u></a></label>
+            <app-dialog-tien-thanh-toan [displayDialogTien]="show8"></app-dialog-tien-thanh-toan>
+          </div>
+          <div class="p-field p-col-7">
+            <p-inputNumber mode="currency" currency="USD" locale="en-US" placeholder=""></p-inputNumber>
+          </div>
+          <div class="p-field p-col-5 p-mt-2">
+            <label for="">Còn nợ lại</label>
+          </div>
+          <div class="p-field p-col-7">
+            <p-inputNumber mode="currency" currency="USD" locale="en-US" placeholder="0"></p-inputNumber>
+          </div>
+          <div class="p-field p-col-5 p-mt-2">
+            <label for="">Tiền thừa</label>
+          </div>
+          <div class="p-field p-col-7">
+            <p-inputNumber mode="currency" currency="USD" locale="en-US" placeholder="0"></p-inputNumber>
+          </div>
+          <div class="p-field p-col-4">
+              <p-button label="Cập nhật" icon="pi pi-check" iconPos="left" (onClick)="onSubmit()"></p-button>
+          </div>
+          <div class="p-field p-col-4">
+            <button pButton type="button" label="Lưu tạm" icon="pi pi-save" iconPos="left">
+            </button>
+          </div>
+          <div class="p-field p-col-4">
+            <button pButton type="button" label="Tạo mới" icon="pi pi-refresh" iconPos="left" >
+            </button>
+          </div>
+          <div class="p-field p-col-12"></div>
+        </div>
+      </div> 
+      <div class="p-col-1"></div>
+    </div>
+  </section>
+
+
+
+
+
+  
+  

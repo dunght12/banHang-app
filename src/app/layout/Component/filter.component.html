@@ -1,0 +1,154 @@
+<header>
+  <div class="header-menu p-d-flex">
+    <div class="info-header">
+      <h4 style="margin-left: 35px;">Bán hàng</h4>
+    </div>
+    <div class="search-header">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText placeholder="Tìm kiếm nhanh menu">
+      </span>
+    </div>
+    <hr style="height: 30px;" class="p-mt-3 p-ml-3 p-mr-3">
+    <div class="account-search p-mt-2">
+      <p>123456 - Nguyễn Anh Vũ</p>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="tieu-de p-d-flex">
+    <h3 style="margin-left: 35px;">Bán hàng tại siêu thị</h3>
+    <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+  </div>
+  <section id="formBanHang">
+    <form action="" [formGroup]="frmBanHang" (submit)="onSubmit()">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-9">
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Thành viên <span style="color: red;">*</span></label>
+              <input type="text" pInputText formControlName="thanhVien" class="p-mb-1" (blur)="change.emit(frmBanHang.valid)">
+              <span style="color: red; font-size: 0.8em;"
+                *ngIf="frmBanHang.controls.thanhVien.errors?.required && submitted">
+                Vui lòng điền đầy đủ
+              </span>
+              <span style="color: red; font-size: 0.8em;"
+                *ngIf="frmBanHang.controls.thanhVien.errors?.minlength && submitted">
+                Trường có ít nhất 4 ký tự
+              </span>
+              <!-- <div style="color: red;"
+              *ngIf="submitted && frmBanHang.controls.thanhVien.errors">
+                <div *ngIf="frmBanHang.controls.thanhVien.errors?.required">
+                  Vui lòng điền đầy đủ
+                </div>
+              </div> -->
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for=""><a (click)="showDialogKH()"><u>Khách hàng:</u></a></label>
+              <input type="text" pInputText formControlName="khachHang">
+              <span style="color: red; font-size: 0.8em;"
+                *ngIf="frmBanHang.controls.khachHang.errors?.required && submitted">
+                Vui lòng điền đầy đủ
+              </span>
+            </div>
+            <app-dialog-ttin-kh [displayDialogKH]="show3"></app-dialog-ttin-kh>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Điện thoại:</label>
+              <!-- <input type="text" pInputText formControlName="dienThoai"> -->
+              <p-inputMask mask="0999999999" formControlName="dienThoai"></p-inputMask>
+              <span style="color: red; font-size: 0.8em;"
+                *ngIf="frmBanHang.controls.dienThoai.errors?.required && submitted">
+                Vui lòng điền đầy đủ
+              </span>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Tỉnh/ Thành phố <span style="color: red;">*</span></label>
+              <p-dropdown [options]="cities" optionLabel="name" placeholder=""></p-dropdown>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Quận/ Huyện <span style="color: red;">*</span></label>
+              <p-dropdown [options]="district" optionLabel="name" placeholder=""></p-dropdown>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Phường/ Xã <span style="color: red;">*</span></label>
+              <p-dropdown [options]="phuongXa" optionLabel="name" placeholder=""></p-dropdown>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Địa chỉ liên hệ <span style="color: red;">*</span></label>
+              <input type="text" pInputText formControlName="diaChi">
+              <span style="color: red; font-size: 0.8em;"
+                *ngIf="frmBanHang.controls.diaChi.errors?.required && submitted">
+                Vui lòng điền đầy đủ
+              </span>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Mã số thuế</label>
+              <p-inputMask mask="9999999999" formControlName="maSoThue"></p-inputMask>
+              <span style="color: red; font-size: 0.8em;"
+                *ngIf="frmBanHang.controls.maSoThue.errors?.required && submitted">
+                Vui lòng điền đầy đủ
+              </span>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Nhân viên bán <span style="color: red;">*</span></label>
+              <span class="p-input-icon-right">
+                <input type="text" pInputText style="width: 30%;"> 
+                <input type="text" pInputText style="width: 70%;">
+                <i class="pi pi-search" (click)="showMaximizableDialog1()"></i>
+              </span>
+              
+              <app-dialog-tim-kiem-nv [displayMaximizable1]="show2"></app-dialog-tim-kiem-nv>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Barcode</label>
+              <span class="p-input-icon-right">
+                <i class="pi pi-search" (click)="showMaximizableDialog()"></i>
+                <input type="text" pInputText fromControlName="barcode">
+                <div style="color: red; font-size: 0.8em;"
+                  *ngIf="frmBanHang.controls.barcode.errors?.required && submitted">
+                  Vui lòng điền đầy đủ
+                </div>
+              </span>
+              <app-dialog-tim-kiem-sp [displayMaximizable]="show1"></app-dialog-tim-kiem-sp>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <div class="p-grid">
+                <div class="p-field p-col-6">
+                  <button pButton type="button" icon="pi pi-microsoft" iconPos="left" label="Khuyến mãi combo"></button>
+                </div>
+                <div class="p-field p-col-6">
+                  <button pButton type="button" icon="pi pi-microsoft" iconPos="left" label="Lấy khuyến mãi"
+                    (click)="showDialogKMai()"></button>
+                  <app-dialog-kmai [displayDialogKMai]="show5"></app-dialog-kmai>
+                </div>
+              </div>
+            </div>
+            <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
+              <label for="">Coupon</label>
+              <input type="text" pInputText formControlName="coupon">
+              <span style="color: red; font-size: 0.8em;"
+                *ngIf="frmBanHang.controls.coupon.errors?.required && submitted">
+                Vui lòng điền đầy đủ
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-field p-col-3">
+          <div class="p-field p-col-12">
+            <label for="">Kho xuất</label>
+            <input type="text" pInputText disabled="">
+          </div>
+          <div class="p-field p-col-12">
+            <label for="">Nội dung</label>
+            <textarea [rows]="8" [cols]="1" pInputTextarea></textarea>
+          </div>
+          <div class="col-md-4">
+            <button #myDiv type="submit">abc</button>
+            <!-- <p-button #myDiv type="submit" label="Click" icon="pi pi-check" iconPos="left" (onClick)="onSubmit()"></p-button> -->
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</body>

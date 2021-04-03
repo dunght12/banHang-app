@@ -1,0 +1,187 @@
+<!-- dialog thông tin khách hàng -->
+<p-dialog header="Thông tin khách hàng" [(visible)]="displayDialogKH" [style]="{width:'65vw'}" [maximizable]="true" [baseZIndex]="1000"
+[draggable]="false" [resizable]="false">
+  <p-tabView>
+    <p-tabPanel header="Thông tin khách hàng VT++">
+      <fieldset style="border-radius: 5px; border-color:linen; font-size: 0.9em;" class="p-mt-2 p-mb-4">
+        <legend style="font-weight: bold;">Thông tin Viettel ++</legend>
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-3">
+            <label for="">Viettel++ ID</label>
+            <input type="number" pInputText disabled="" placeholder="0907292952">
+          </div>
+          <div class="p-field p-col-3">
+            <label for="">Họ và tên khách hàng VT++</label>
+            <input type="text" pInputText disabled="">
+          </div>
+          <div class="p-field p-col-3">
+            <label for="">Giấy tờ pháp lý VT++</label>
+            <input type="text" pInputText disabled="">
+          </div>
+          <div class="p-field p-col-3">
+            <label for="">Số điện thoại VT++</label>
+            <input type="tel" pInputText disabled="" placeholder="0907292952">
+          </div>    
+          <div class="p-field p-col-3">
+            <label for="">Ngày sinh VT++ <span style="color: red;">*</span></label>
+            <input type="date" pInputText disabled="">
+          </div>
+          <div class="p-field p-col-6">
+            <label for="">Địa chỉ VT++<span style="color: red;">*</span></label>
+            <input type="tel" pInputText disabled="">
+          </div>
+          <div class="p-field p-col-3">
+            <label for="">Tổng điểm tích lũy</label>
+            <input type="number" pInputText disabled="">
+          </div>  
+          <div class="p-field p-col-3">
+            <label for="">OTP</label>
+            <input type="number" pInputText>
+          </div>
+          <div class="p-col-6">
+            <div class="p-grid" style="margin-top:29px;" >
+              <div class="p-field p-col-4">
+                <button pButton type="button" label="Xác nhận OTP" class="p-text-nowrap p-text-truncate" ></button>
+              </div>
+              <div class="p-field p-col-4">
+                <button pButton type="button" label="Gửi lại OTP" class="p-text-nowrap p-text-truncate"></button>
+              </div>
+              <div class="p-field p-col-4">
+                <button pButton type="button" icon="pi pi-plus" iconPos="left" label="Thêm TK VT++" disabled='false' class="p-text-nowrap p-text-truncate"></button>
+              </div>
+            </div>
+          </div>
+          <div class="p-field p-col-3 p-mt-5">
+            <span>
+              <p-checkbox></p-checkbox>
+              <label for="checkOTP" class="p-pl-1">Khách hàng không cung cấp OTP</label>
+          </span>
+          </div>
+        </div>
+      </fieldset>
+  
+      <fieldset style="border-radius:5px; border-color:linen; font-size: 0.9em;">
+        <legend style="font-weight: bold;">Thông tin Viettel ERP</legend>
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-8">
+            <label for="">Khách hàng</label>
+            <span class="p-input-icon-right">
+              <input type="number" pInputText style="width: 30%;">
+              <input type="text" pInputText style="width: 70%;" (click)="showDialogTimKiemKH()">
+              <i class="pi pi-search" (click)="showDialogTimKiemKH()"></i>
+            </span>
+            <app-dialog-tim-kiem-kh [displayDialogTimKiemKh]="show4"></app-dialog-tim-kiem-kh>
+          </div>
+          <div class="p-field p-col-4">
+            <label class="p-mb-3" for="">Giới tính</label><br>
+            <span>
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male" class="p-mr-4">Nam</label>
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">Nữ</label>
+            </span>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="">Giấy tờ pháp lý</label>
+            <input type="number" pInputText>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="">Số điện thoại <span style="color: red;">*</span></label>
+            <input type="number" pInputText>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="">Ngày sinh <span style="color: red;">*</span></label>
+            <input type="date" pInputText>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="email">Email</label>
+            <input type="email" pInputText>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="number">Mã số thuế</label>
+            <input type="number" pInputText>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="number">CT ngân hàng</label>
+            <input type="text" pInputText>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="number">Tỉnh thành phố <span style="color: red;">*</span></label>
+            <p-dropdown [options]="cities" optionLabel="name" placeholder=""></p-dropdown>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="">Quận/ Huyện <span style="color: red;">*</span></label>
+            <p-dropdown [options]="district" optionLabel="name" placeholder=""></p-dropdown>
+          </div>
+          <div class="p-field p-col-4">
+            <label for="">Phường/ Xã <span style="color: red;">*</span></label>
+            <p-dropdown [options]="phuongXa" optionLabel="name" placeholder=""></p-dropdown>
+          </div>
+          <div class="p-field p-col-12">
+            <label for="diaChi">Địa chỉ liên hệ</label>
+            <input type="text" pInputText>
+          </div>
+          <div class="p-field p-col-12">
+            <label for="diaChi">Địa chỉ hóa đơn</label>
+            <div class="p-inputgroup">
+              <input type="text" pInputText>
+              <button type="button" pButton pRipple icon="pi pi-copy"></button>
+            </div>
+          </div>
+          <div class="p-field p-col-12">
+            <label for="diaChi">Địa chỉ giao hàng</label>
+            <div class="p-inputgroup">
+              <input type="text" pInputText>
+              <button type="button" pButton pRipple icon="pi pi-copy"></button>
+            </div>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Người nhận</label>
+            <input type="text" pInputText>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Số điện thoại người nhận</label>
+            <p-inputNumber mode="decimal"></p-inputNumber>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Email người nhận</label>
+            <input type="email" pInputText>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Chức vụ</label>
+            <input type="text" pInputText>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Tên tổ chức</label>
+            <input type="text" pInputText>
+          </div>
+          <div class="p-field p-col-12 p-md-4 p-mt-5">
+            <span>
+              <p-checkbox></p-checkbox>
+              <label for="" class="p-pl-2">Khách hàng doanh nghiệp</label>
+          </span>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Người mua</label>
+            <input type="text" pInputText>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Ngân hàng</label>
+            <input type="text" pInputText>
+          </div>
+          <div class="p-field p-col-12 p-md-4">
+            <label for="">Số tài khoản ngân hàng</label>
+            <p-inputNumber mode="decimal"></p-inputNumber>
+          </div>
+        </div>
+      </fieldset>
+      <div class="p-d-flex p-justify-end">
+        <p-button (click)="displayDialogKH=false" label="Cập nhật" icon="pi pi-check" iconPos="left" class="p-mt-4"></p-button>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel header="Lịch sử tích điểm ERP"></p-tabPanel>
+    <p-tabPanel header="Lịch sử tiêu điểm ERP"></p-tabPanel>
+    <p-tabPanel header="Lịch sử Hoàn/ Hủy điểm"></p-tabPanel>
+    <p-tabPanel header="Lịch sử điểm VT++"></p-tabPanel>
+  </p-tabView>
+</p-dialog>

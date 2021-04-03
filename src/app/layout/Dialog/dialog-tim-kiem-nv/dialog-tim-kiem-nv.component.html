@@ -1,0 +1,68 @@
+<!-- dialog 2 tìm kiếm nhân viên-->
+<p-dialog header="Tìm kiếm nhân viên" [(visible)]="displayMaximizable1" [style]="{width:'65vw'}" [maximizable]="true" [baseZIndex]="1000" 
+[draggable]="false" [resizable]="false">
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col-4">
+    <label for="">Từ khóa</label>
+    <input type="text" pInputText>
+  </div>
+  <div class="p-field p-col-1"></div>
+  <div class="p-field p-col-7">
+    <div class="p-grid">
+      <div class="p-field p-col-3 p-pl-0 p-pt-6">
+        <span>
+          <p-checkbox></p-checkbox>
+          <label for="" class="p-pl-1">Tên truy cập</label>
+        </span>
+      </div>
+      <div class="p-field p-col-3 p-pt-6">
+      <span>
+        <p-checkbox></p-checkbox>
+        <label for="" class="p-pl-1">Họ và tên</label>
+      </span>
+      </div>
+      <div class="p-field p-col-2 p-pl-0 p-pt-6">
+        <span>
+          <p-checkbox></p-checkbox>
+          <label for="" class="p-pl-1">Địa chỉ</label>
+      </span>
+      </div>
+      <div class="p-field p-col-2 p-pt-6">
+        <span>
+          <p-checkbox></p-checkbox>
+          <label for="" class="p-pl-1">Số ĐT</label>
+        </span>
+      </div>
+      <div class="p-field p-col-2 p-pt-6">
+        <span>
+          <p-checkbox></p-checkbox>
+          <label for="" class="p-pl-1">Email</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="p-field p-col-4">
+    <label for="">Giới tính</label>
+    <input type="text" pInputText>
+  </div>
+  <div class="p-field p-col-4">
+    <label for="">Năm sinh</label>
+    <input type="text" pInputText>
+  </div>
+  <div class="p-field p-col-4">
+    <label for="">Khu vực</label>
+    <input type="text" pInputText>
+  </div>
+  <div class="p-field p-col-4">
+    <label for="">Phòng ban</label>
+    <input type="text" pInputText>
+  </div>
+  <div class="p-field p-col-4">
+    <label for="">Chức vụ</label>
+    <input type="text" pInputText>
+  </div>
+  <div class="p-field p-col-4">
+    <button pButton type="button" icon="pi pi-search" iconPos="left" label="Tìm kiếm" style="width:50%" class="p-mt-4 p-ml-6"></button>
+  </div>
+</div>
+</p-dialog>
