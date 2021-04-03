@@ -11,7 +11,7 @@ export class EmployeeService {
   jsonEmpUrl : string = "../assets/employee.json";
   getAllEmployees(){
     return this.http.get<any>(this.jsonEmpUrl)
-    .toPromise().then(res => <Employee>res.data)
-    .then(data => {return data;});
+    .toPromise().then(res => <Employee>res.data1)
+    .then(data1 => {return data1;});
   }
 }
