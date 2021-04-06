@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ViewChild } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import { ProductService } from "../../product.service";
 import { Product } from "../../model/product";
@@ -17,6 +17,9 @@ export class FooterComponent implements OnInit{
     // displayDialogCfKMai : any;
     show7 !: boolean;
     show8 !: boolean;
+    
+    submitted : boolean = false;
+    @Output() onSendData = new EventEmitter<any>();
 
     lyDoGiamGia : any[]=[
         {name : 'Sinh nhật Viettel'},
@@ -33,9 +36,7 @@ export class FooterComponent implements OnInit{
         {name : 'AirPay'}
       ]
       
-    constructor(private commonServiceService: CommonServiceService) {
-
-    }  
+    constructor(private commonServiceService: CommonServiceService) {}  
 
     ngOnInit(): void {
     }
@@ -48,13 +49,11 @@ export class FooterComponent implements OnInit{
         this.show8 = true;
         console.log("show8");  
     }
-
     
     onSubmit(){
-        console.log(".....")
-        this.commonServiceService.onUpdateEvent();
+        this.onSendData.emit(this.submitted);    
     }
-    
+
     filterChanged(event:any){
 
     }

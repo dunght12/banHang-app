@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FilterComponent } from "../layout/Component/filter.component"; 
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  @ViewChild(FilterComponent) myFilterForm !: FilterComponent;
   constructor() { }
+  
+  ngAfterViewInit(){
+   console.log(this.myFilterForm.frmBanHang.value,"in gia tri tu cha");
+  }
 
   ngOnInit(): void {
   }
- 
+  onClickHere(){}  
+  
+  onGetData(event:any){
+    console.log(event);
+    if(event == false){
+      this.myFilterForm.onCheckForm();
+      console.log(this.myFilterForm.frmBanHang.value);
+      
+    }
+  }
 }

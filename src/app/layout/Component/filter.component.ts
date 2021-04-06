@@ -65,12 +65,10 @@ export class FilterComponent implements OnInit {
   // displayDialogKmai: any;
   
   // @Input() frmBanHang?:FormGroup;
-  @Output() change: EventEmitter<any> = new EventEmitter();
+  // @Output() change: EventEmitter<any> = new EventEmitter();
   items: MenuItem[] = [];
   home: any;
-  submitted = false;
-  // @ViewChild('myDiv') myDiv!: ElementRef<HTMLElement>;
-
+  submitted:boolean = false;
   
   constructor(private fb: FormBuilder, private commonServiceService: CommonServiceService) {
   }
@@ -87,10 +85,10 @@ export class FilterComponent implements OnInit {
     this.createForm();
     // console.log(this.frmBanHang);  
     // console.log(this.frmBanHang,"formGroup:::");
-    this.commonServiceService.onlistenUpdateEvent().subscribe(() => {
-      console.log("submitting....")
+    // this.commonServiceService.onlistenUpdateEvent().subscribe(() => {
+    //   console.log("submitting....")
       // this.myDiv.nativeElement.click();
-    });
+    // });
   }
 
   createForm() {
@@ -102,16 +100,20 @@ export class FilterComponent implements OnInit {
       khachHang: ['', [Validators.required]],
       diaChi: ['',[Validators.required]],
       maSoThue:['',[Validators.required]],
-      barcode: ['',[Validators.required]],
+      // barcode: ['',[Validators.required]],
       coupon: ['',[Validators.required]]
       
     })
   }
 
 
-  onSubmit() {
-    console.log(this.frmBanHang);
-    this.submitted = true;
+  // onSubmit() {
+  //   console.log(this.frmBanHang);
+  //   this.submitted = true;
+  // }
+
+  onCheckForm(){
+    this.submitted = true;  
   }
 
   showMaximizableDialog() {

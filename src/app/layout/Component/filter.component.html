@@ -22,13 +22,13 @@
     <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
   </div>
   <section id="formBanHang">
-    <form action="" [formGroup]="frmBanHang" (submit)="onSubmit()">
+    <form action="" [formGroup]="frmBanHang" (ngSubmit)="onCheckForm()">
       <div class="p-fluid p-formgrid p-grid">
         <div class="p-field p-col-9">
           <div class="p-fluid p-formgrid p-grid">
             <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
               <label for="">Thành viên <span style="color: red;">*</span></label>
-              <input type="text" pInputText formControlName="thanhVien" class="p-mb-1" (blur)="change.emit(frmBanHang.valid)">
+              <input type="text" pInputText formControlName="thanhVien" class="p-mb-1">
               <span style="color: red; font-size: 0.8em;"
                 *ngIf="frmBanHang.controls.thanhVien.errors?.required && submitted">
                 Vui lòng điền đầy đủ
@@ -37,12 +37,6 @@
                 *ngIf="frmBanHang.controls.thanhVien.errors?.minlength && submitted">
                 Trường có ít nhất 4 ký tự
               </span>
-              <!-- <div style="color: red;"
-              *ngIf="submitted && frmBanHang.controls.thanhVien.errors">
-                <div *ngIf="frmBanHang.controls.thanhVien.errors?.required">
-                  Vui lòng điền đầy đủ
-                </div>
-              </div> -->
             </div>
             <div class="p-field p-col-12 p-sm-6 p-md-4 p-lg-4 p-xl-4">
               <label for=""><a (click)="showDialogKH()"><u>Khách hàng:</u></a></label>
@@ -105,10 +99,10 @@
               <span class="p-input-icon-right">
                 <i class="pi pi-search" (click)="showMaximizableDialog()"></i>
                 <input type="text" pInputText fromControlName="barcode">
-                <div style="color: red; font-size: 0.8em;"
+                <!-- <div style="color: red; font-size: 0.8em;"
                   *ngIf="frmBanHang.controls.barcode.errors?.required && submitted">
                   Vui lòng điền đầy đủ
-                </div>
+                </div> -->
               </span>
               <app-dialog-tim-kiem-sp [displayMaximizable]="show1"></app-dialog-tim-kiem-sp>
             </div>
@@ -144,7 +138,7 @@
             <textarea [rows]="8" [cols]="1" pInputTextarea></textarea>
           </div>
           <div class="col-md-4">
-            <button #myDiv type="submit">abc</button>
+            <!-- <button #myDiv type="submit">Click</button> -->
             <!-- <p-button #myDiv type="submit" label="Click" icon="pi pi-check" iconPos="left" (onClick)="onSubmit()"></p-button> -->
           </div>
         </div>
